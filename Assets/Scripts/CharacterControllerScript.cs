@@ -17,6 +17,7 @@ public class CharacterControllerScript : MonoBehaviour
     private bool facingRight = true;
     private Rigidbody2D myRigidBody;
 
+    bool doubleJump = false;
 
     Animator anim;
 
@@ -42,6 +43,9 @@ public class CharacterControllerScript : MonoBehaviour
 
         myRigidBody.velocity = new Vector2(move * maxSpeed, myRigidBody.velocity.y);
 
+        if (grounded)
+            doubleJump = false;
+
         if (move > 0 && !facingRight)
         {
             Flip();
@@ -54,10 +58,16 @@ public class CharacterControllerScript : MonoBehaviour
 
     void Update()
     {
-        if (grounded && Input.GetKeyDown(KeyCode.Space))
+        if ((grounded || !doubleJump) && Input.GetKeyDown(KeyCode.Space))
         {
             anim.SetBool("ground", false);
             myRigidBody.AddForce(new Vector2(0, jumpForce));
+
+            if (!doubleJump && !grounded)
+            {
+                doubleJump = true;
+            }
+
         }
     }
 

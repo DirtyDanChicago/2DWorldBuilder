@@ -146,7 +146,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.4481132, g: 0.776451, b: 1, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -349,8 +349,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1082691593}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6, y: -1.13, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_LocalPosition: {x: -5.9974, y: -1.1274, z: 0}
+  m_LocalScale: {x: 3.9763143, y: 4.0179677, z: 4}
   m_Children:
   - {fileID: 607877882}
   m_Father: {fileID: 0}
@@ -426,11 +426,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 5
-  jumpForce: 700
+  jumpForce: 600
   grounded: 0
   groundRadius: 0.2
   groundCheck: {fileID: 607877882}
-  whatIsGround:
+  Ground:
     serializedVersion: 2
     m_Bits: 512
 --- !u!1001 &1735412466
