@@ -432,7 +432,7 @@ MonoBehaviour:
   groundCheck: {fileID: 607877882}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 4294967039
+    m_Bits: 512
 --- !u!1001 &1735412466
 Prefab:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class CharacterControllerScript : MonoBehaviour
     public bool grounded = false;
     public float groundRadius = 0.2f;
     public Transform groundCheck;
-    public LayerMask whatIsGround;
+    public LayerMask Ground;
 
     private bool facingRight = true;
     private Rigidbody2D myRigidBody;
@@ -27,13 +27,13 @@ public class CharacterControllerScript : MonoBehaviour
 	}
 	
 	// Update is called once per frame
-	private void FixedUpdate ()
+	void FixedUpdate ()
     {
 
-        grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, Ground);
         anim.SetBool("ground", grounded);
 
-        anim.SetFloat("vspeed", myRigidBody.velocity.y);
+        //anim.SetFloat("vspeed", myRigidBody.velocity.y);
 
         float move = Input.GetAxis("Horizontal");
         myRigidBody = GetComponent<Rigidbody2D>();
@@ -52,7 +52,7 @@ public class CharacterControllerScript : MonoBehaviour
         }
 	}
 
-    private void Update()
+    void Update()
     {
         if (grounded && Input.GetKeyDown(KeyCode.Space))
         {
@@ -62,7 +62,7 @@ public class CharacterControllerScript : MonoBehaviour
     }
 
     //Flips the character for left and right animation.
-    private void Flip()
+    void Flip()
     {
         facingRight = !facingRight;
         Vector3 theScale = transform.localScale;
